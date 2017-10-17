@@ -18,18 +18,18 @@ class WordCloudDisplay extends Component {
     list: e.target.value
   })
   componentDidMount() {
-     WordCloud(this.refs["my-canvas"], {
-       list: this.props.listFromParent,
-       weightFactor: 5,
-       fontFamily: "Times, serif",
-       color: function(word, weight) {
-          return weight === 12 ? "#f02222" : "#c09292";
-      },
-       rotateRatio: 0.5,
-       rotationSteps: 2,
-       backgroundColor: "#ffe0e0"
-     });
-   }
+    WordCloud(this.refs["my-canvas"], {
+      list: this.props.listFromParent,
+      weightFactor: 4,
+      fontFamily: "Times, serif",
+      color: function(word, weight) {
+         return weight === 12 ? "#f02222" : "#c09292";
+     },
+      rotateRatio: 1,
+      rotationSteps: 10,
+      backgroundColor: "#ffe0e0"
+    });
+  }
   render() {
     return (
       <div className="App">
