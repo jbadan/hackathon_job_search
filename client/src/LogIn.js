@@ -16,6 +16,7 @@ class LogIn extends Component {
     console.log('A user has been logged in' + this.state.value);
     event.preventDefault();
   }
+
   render() {
     return (
       <div id='signin'>
