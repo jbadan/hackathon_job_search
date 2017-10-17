@@ -45,6 +45,13 @@ class TextInput extends Component {
     }
     return (
       <div className="App row">
+      <h1>CV/Resume Word Cloud Generator</h1>
+      <div>
+        <h3>Why do I need a word cloud? </h3>
+        <p>Word clouds can identify trends and patterns that would otherwise be unclear or difficult to see in your document.
+        This is a a quick and easy way to see which keywords are most present on your resume/CV.
+        Input your resume or cover letter to the text box below to generate your custom word cloud. </p>
+      </div>
       <form className="col-md-6" onSubmit={this.handleSubmit}>
         <label> Insert your text here:  </label>
         <textarea className="form-control" rows="8" type="text" value={this.state.value} onChange={this.handleChange}> </textarea>
