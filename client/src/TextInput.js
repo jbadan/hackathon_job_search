@@ -44,11 +44,10 @@ class TextInput extends Component {
       var display = <WordCloudDisplay listFromParent={this.state.list} />
     }
     return (
-      <div className="App">
-      <form onSubmit={this.handleSubmit}>
-        <label> Insert your text here:
-        <textarea type="text" value={this.state.value} onChange={this.handleChange}> </textarea>
-        </label>
+      <div className="App row">
+      <form className="col-md-6" onSubmit={this.handleSubmit}>
+        <label> Insert your text here:  </label>
+        <textarea className="form-control" rows="8" type="text" value={this.state.value} onChange={this.handleChange}> </textarea>
         <input type="submit" value="Submit" />
       </form>
       {display}
