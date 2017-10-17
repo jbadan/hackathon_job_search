@@ -31,7 +31,6 @@ class WordCloudDisplay extends Component {
      });
    }
   render() {
-    console.log(this.props.listFromParent)
     return (
       <div className="App">
            <div style={styles}>

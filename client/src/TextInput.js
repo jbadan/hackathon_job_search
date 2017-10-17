@@ -40,6 +40,9 @@ class TextInput extends Component {
     })
   }
   render() {
+    if(this.state.list.length > 0){
+      var display = <WordCloudDisplay listFromParent={this.state.list} />
+    }
     return (
       <div className="App">
       <form onSubmit={this.handleSubmit}>
@@ -48,7 +51,7 @@ class TextInput extends Component {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <WordCloudDisplay listFromParent={this.state.list} />
+      {display}
       </div>
     );
   }
