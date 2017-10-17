@@ -1,29 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { render } from "react-dom";
+import './App.css'
 
-class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      jobs: []
-    }
+import WordCloud from "wordcloud";
+
+const styles = {
+  fontFamily: "sans-serif",
+  textAlign: "center"
+};
+
+class App extends React.Component {
+  componentDidMount() {
+    WordCloud(this.refs["my-canvas"], {
+      list: [["foo", 20], ["bar", 6]],
+      weightFactor: 5,
+      fontFamily: "Times, serif",
+      color: function(word, weight) {
+        return weight === 12 ? "#f02222" : "#c09292";
+      },
+      rotateRatio: 0.5,
+      rotationSteps: 2,
+      backgroundColor: "#ffe0e0"
+    });
   }
 
-  componentDidMount(){
-    fetch("/jobs")
-    .then(response => response.json())
-    .then(response => this.setState({jobs:response}))
-  }
   render() {
     return (
-      <div className="App">
-        <ul className="App-intro">
-           {this.state.jobs.map((item, index) => (<li key={index}> {item.title}</li>))}
-        </ul>
+      <div style={styles}>
+        <canvas ref="my-canvas" />
       </div>
     );
   }
 }
 
-export default App;
+export default App
