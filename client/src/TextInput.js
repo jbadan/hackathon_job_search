@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import App from './App.js'
+import WordCloudDisplay from './WordCloud.js'
 
 class TextInput extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class TextInput extends Component {
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <WordCloudDisplay listFromParent={this.state.list} />
       </div>
     );
   }

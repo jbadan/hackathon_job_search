@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TextInput from './TextInput.js';
-import Profile from './Profile.js';
+import WordCloud from './WordCloud.js';
 import NotFound from './NotFound.js';
 import LogIn from './LogIn.js'
 
@@ -34,7 +34,7 @@ class App extends Component {
           </nav>
           <Switch>
            <Route exact path="/" component={LogIn} />
-           <Route path="/profile" component={Profile} />
+           <Route path="/profile" component={TextInput} />
            <Route component={NotFound} />
          </Switch>
       </div>
