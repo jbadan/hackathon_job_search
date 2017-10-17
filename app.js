@@ -6,8 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./models/user');
-
-var jobs = require('./routes/jobs');
+var users = require('./routes/users');
+var express = require('express');
 var index = require('./routes/index');
 
 var app = express();
@@ -21,10 +21,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //configuring mongoose- change mern-backend to whatever your database name is
-mongoose.connect('mongodb://localhost/mern-backend');
+mongoose.connect('mongodb://localhost/jobsHackathon');
 
 app.use('/', index);
-app.use('/jobs', jobs);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

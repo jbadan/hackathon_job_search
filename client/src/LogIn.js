@@ -1,36 +1,62 @@
 import React, { Component } from 'react';
 import './App.css';
-
 class LogIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      email: '',
+      password: '',
+      users: [],
+      loggedIn: ''
+    };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
   }
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  componentDidMount(){
+    fetch('/users')
+    .then(response => response.json())
+    .then(response => this.setState({users:response}))
   }
-  handleSubmit(event) {
-    console.log('A user has been logged in' + this.state.value);
-    event.preventDefault();
+  handleChangeEmail(event) {
+    this.setState({
+      email: event.target.value
+    });
+  }
+  handleChangePassword(event) {
+    this.setState({
+      password: event.target.value
+    });
+  }
+  handleSubmit(e) {
+    e.preventDefault();
+    let tempDiv = '';
+    if((this.state.email === this.state.users[0].email) && (this.state.password === this.state.users[0].password)){
+      tempDiv = <div> Success! </div>
+    }else{
+      tempDiv = <div> Sorry that username/password combination is incorrect.</div>
+    }
+    this.setState({
+      loggedIn: tempDiv
+    })
   }
   render() {
     return (
       <div id='signin'>
       <h1>Please login to get started!</h1>
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <label>
           Email
-          <input type="text" value={this.state.value} onChange={this.handleChange}/>
+          <input type="text" value={this.state.email} onChange={this.handleChangeEmail}/>
         </label>
         <label>
             Password:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            <input type="text" value={this.state.password} onChange={this.handleChangePassword} />
          </label>
-        <input type='submit' value='Login' />
+
+        <button onClick={(e) => this.handleSubmit(e)}>Log in</button>
       </form>
+      {this.state.loggedIn}
       </div>
     );
   }
