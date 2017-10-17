@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { render } from "react-dom";
 import './App.css';
 import TextInput from './TextInput.js';
-
 import WordCloud from "wordcloud";
+
 
 const styles = {
  fontFamily: "sans-serif",
@@ -36,6 +36,7 @@ class WordCloudDisplay extends Component {
            <div style={styles}>
               <canvas ref="my-canvas" />
           </div>
+          <a href="/profile"> Reset </a>
       </div>
     );
   }
