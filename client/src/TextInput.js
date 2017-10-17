@@ -23,7 +23,6 @@ class TextInput extends Component {
     let textInput = this.state.value;
     //words is array including each word from input
     var words = textInput.replace(/[.]/g, '').split(/\s/);
-    console.log(words);
     var freqMap = {};
     words.forEach(function(w) {
         if (!freqMap[w]) {
@@ -31,7 +30,13 @@ class TextInput extends Component {
           }
           freqMap[w] += 1;
         });
-        console.log(freqMap);
+    var result = Object.keys(freqMap).map(function(key) {
+      return [String(key), freqMap[key]];
+    });
+    //result converts freqMap object into array of arrays
+    this.setState({
+      list: result
+    })
   }
   render() {
     return (
