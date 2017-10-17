@@ -10,19 +10,16 @@ const styles = {
  textAlign: "center"
 };
 
-class Profile extends Component {
+class WordCloudDisplay extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      list: ''
-    }
   }
   handleChangeValue = e => this.setState({
     list: e.target.value
   })
   componentDidMount() {
      WordCloud(this.refs["my-canvas"], {
-       list: this.state.list,
+       list: this.props.listFromParent,
        weightFactor: 5,
        fontFamily: "Times, serif",
        color: function(word, weight) {
@@ -34,12 +31,9 @@ class Profile extends Component {
      });
    }
   render() {
+    console.log(this.props.listFromParent)
     return (
       <div className="App">
-           <TextInput
-              value={this.state.list}
-              onChangeValue={this.handleChangeValue}
-            />
            <div style={styles}>
               <canvas ref="my-canvas" />
           </div>
@@ -47,4 +41,4 @@ class Profile extends Component {
     );
   }
 }
-export default Profile;
+export default WordCloudDisplay;
