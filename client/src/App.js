@@ -22,9 +22,15 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-          <nav>
-            <Link to="/">Login</Link>
-            <Link to="/profile">Profile</Link>
+          <nav className="navbar navbar-defualt">
+          <div className="container-fluid">
+              <div className="navbar-header">
+                <ul className="nav navbar-nav">
+                <li><Link to="/">Login</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                </ul>
+              </div>
+          </div>
           </nav>
           <Switch>
            <Route exact path="/" component={LogIn} />
