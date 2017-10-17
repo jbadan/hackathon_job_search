@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Route, Redirect } from 'react-router-dom';
+
 import './App.css';
 class LogIn extends Component {
   constructor(props) {
@@ -7,7 +9,8 @@ class LogIn extends Component {
       email: '',
       password: '',
       users: [],
-      loggedIn: ''
+      loggedIn: '',
+      redirect: false
     };
 
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -31,16 +34,24 @@ class LogIn extends Component {
   handleSubmit(e) {
     e.preventDefault();
     let tempDiv = '';
+    let blah = '';
     if((this.state.email === this.state.users[0].email) && (this.state.password === this.state.users[0].password)){
       tempDiv = <div> Success! </div>
+      blah = true;
+
     }else{
       tempDiv = <div> Sorry that username/password combination is incorrect.</div>
     }
     this.setState({
-      loggedIn: tempDiv
+      loggedIn: tempDiv,
+      redirect: blah
     })
-  }
+}
   render() {
+    const{redirect} = this.state;
+    if(redirect){
+      return <Redirect to ='/profile'/>
+    }
     return (
       <div id='signin'>
       <h1>Please login to get started!</h1>
