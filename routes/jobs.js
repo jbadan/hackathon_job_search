@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = ('mongoose');
-var Job = require('../models/job')
+var Job = require('../models/user')
 var router = express.Router();
 
 
