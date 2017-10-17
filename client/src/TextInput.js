@@ -19,9 +19,19 @@ class TextInput extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    let newList = this.state.list
-    
-    console.log('textSubmitted: ' + this.state.value);
+    let newList = this.state.list;
+    let textInput = this.state.value;
+    //words is array including each word from input
+    var words = textInput.replace(/[.]/g, '').split(/\s/);
+    console.log(words);
+    var freqMap = {};
+    words.forEach(function(w) {
+        if (!freqMap[w]) {
+            freqMap[w] = 0;
+          }
+          freqMap[w] += 1;
+        });
+        console.log(freqMap);
   }
   render() {
     return (
