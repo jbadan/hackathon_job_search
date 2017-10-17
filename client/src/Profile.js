@@ -1,12 +1,36 @@
 import React, { Component } from 'react';
+import { render } from "react-dom";
 import './App.css';
-import TextInput from './TextInput.js'
+import TextInput from './TextInput.js';
+
+import WordCloud from "wordcloud";
+
+const styles = {
+ fontFamily: "sans-serif",
+ textAlign: "center"
+};
 
 class Profile extends Component {
+  componentDidMount() {
+     WordCloud(this.refs["my-canvas"], {
+       list: [["foo", 20], ["bar", 6]],
+       weightFactor: 5,
+       fontFamily: "Times, serif",
+       color: function(word, weight) {
+          return weight === 12 ? "#f02222" : "#c09292";
+      },
+       rotateRatio: 0.5,
+       rotationSteps: 2,
+       backgroundColor: "#ffe0e0"
+     });
+   }
   render() {
     return (
       <div className="App">
            <TextInput />
+           <div style={styles}>
+              <canvas ref="my-canvas" />
+          </div>
       </div>
     );
   }
