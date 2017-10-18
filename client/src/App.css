@@ -5,9 +5,12 @@ canvas {
   height: 300px;
 }
 .beth{
-  padding: 20px;
-  margin: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 1.5em;
+  border: 8px double grey;
 }
 .headers {
   font-family:'Play', sans-serif;

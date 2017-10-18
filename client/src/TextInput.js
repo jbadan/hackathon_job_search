@@ -60,6 +60,8 @@ class TextInput extends Component {
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6 beth">
+            <img className="col-sm-4 img-responsive img-circle" alt=" " src="img/beth.jpg"/>
+            <br/>
             <p> Beth Miller loves word clouds. </p>
             <p>"shit Jenna I can't be funny/witty on command!" -Beth Miller</p>
           </div>
