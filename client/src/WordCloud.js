@@ -15,9 +15,10 @@ class WordCloudDisplay extends Component {
   componentDidMount() {
     WordCloud(this.refs["my-canvas"], {
       list: this.props.listFromParent,
+      minSize: 10,
       weightFactor: 4,
       fontFamily: "Play",
-      color: "#"+((1<<24)*Math.random()|0).toString(16),
+      color: "random-light",
       rotateRatio: 1,
       rotationSteps: 10,
       backgroundColor: "white"
