@@ -1,13 +1,21 @@
 .App {
   text-align: center;
 }
-
+canvas {
+  height: 100%;
+}
 .headers {
   font-family:'Play', sans-serif;
   font-weight: bold;
   font-size: 30px;
 }
+.canvasContainer{
+  height: 400px;
+}
 
+.formWidth{
+  width: 500px;
+}
 .padding{
   padding: 20px;
   margin-top: 5px;

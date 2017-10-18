@@ -25,8 +25,8 @@ class WordCloudDisplay extends Component {
   }
   render() {
     return (
-      <div className="col-sm-6">
-           <div style={styles}>
+      <div className="col-sm-12">
+           <div className="canvasContainer" style={styles}>
               <canvas ref="my-canvas" />
           </div>
           <a href="/profile"> Reset </a>
