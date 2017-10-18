@@ -53,22 +53,29 @@ class LogIn extends Component {
       return <Redirect to ='/profile'/>
     }
     return (
-      <div id='signin'>
-      <h1>Please login to get started!</h1>
-      <form>
-        <label>
-          Email
-          <input type="text" value={this.state.email} onChange={this.handleChangeEmail}/>
-        </label>
-        <label>
-            Password:
-            <input type="password" value={this.state.password} onChange={this.handleChangePassword} />
-         </label>
-
-        <button onClick={(e) => this.handleSubmit(e)}>Log in</button>
-      </form>
-      {this.state.loggedIn}
+      <div className="container-fluid">
+      <div className="row text-center">
+      <h1 className="headers">CV/Resume Word Cloud Generator</h1>
+      <div className="col-sm-4"></div>
+        <form className="col-sm-4 padding">
+          <label>Email</label>
+            <input className="form-control" type="text" value={this.state.email} onChange={this.handleChangeEmail}/>
+          <label>Password</label>
+              <input className="form-control" type="password" value={this.state.password} onChange={this.handleChangePassword} />
+          <button onClick={(e) => this.handleSubmit(e)}>Log in</button>
+        </form>
+        {this.state.loggedIn}
+        <div className="col-sm-4"></div>
       </div>
+      <br/>
+      <br/>
+        <div className="row text-center">
+          <img className="col-sm-4 img-responsive img-circle" alt=" " src="img/home1.png"/>
+          <img className="col-sm-4 img-responsive img-circle" alt=" "  src="img/home2.png"/>
+          <img className="col-sm-4 img-responsive img-circle" alt=" "  src="img/home3.png"/>
+        </div>
+      </div>
+
     );
   }
 }
