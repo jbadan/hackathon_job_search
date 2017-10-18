@@ -21,13 +21,11 @@ class WordCloudDisplay extends Component {
     WordCloud(this.refs["my-canvas"], {
       list: this.props.listFromParent,
       weightFactor: 4,
-      fontFamily: "Times, serif",
-      color: function(word, weight) {
-         return weight === 12 ? "#f02222" : "#c09292";
-     },
+      fontFamily: "Play",
+      color: "#"+((1<<24)*Math.random()|0).toString(16),
       rotateRatio: 1,
       rotationSteps: 10,
-      backgroundColor: "#ffe0e0"
+      backgroundColor: "white"
     });
   }
   render() {
