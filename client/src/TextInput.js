@@ -43,7 +43,7 @@ class TextInput extends Component {
     return (
       <div className="container-fluid">
         <h1 className="headers">CV/Resume Word Cloud Generator</h1>
-        <div  className="row">
+        <div className="row">
           <div className="col-sm-6">
             <h3 className="headers"> What is a word cloud? </h3>
             <p>Word clouds (also known as text clouds or tag clouds) work in a simple way:
@@ -51,25 +51,28 @@ class TextInput extends Component {
             the bigger and bolder it appears in the word cloud.</p>
           </div>
           <div className="col-sm-6">
+            <h3 className="headers">Why do I need a word cloud? </h3>
+            <p>Word clouds can identify trends and patterns that would otherwise be unclear or difficult to see in your document.
+            This is a a quick and easy way to see which keywords are most present on your resume/CV.
+            Input your resume or cover letter to the text box below to generate your custom word cloud. </p>
+          </div>
+        </div>
+        <div className="row">
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
             <form onSubmit={this.handleSubmit}>
               <label> Insert your text here:  </label>
               <textarea className="form-control" rows="6" type="text" value={this.state.value} onChange={this.handleChange}> </textarea>
               <input className="button" type="submit" value="Submit" />
             </form>
           </div>
-          <div className="row">
-          <div className="col-sm-6">
-          <h3 className="headers">Why do I need a word cloud? </h3>
-          <p>Word clouds can identify trends and patterns that would otherwise be unclear or difficult to see in your document.
-          This is a a quick and easy way to see which keywords are most present on your resume/CV.
-          Input your resume or cover letter to the text box below to generate your custom word cloud. </p>
-          </div>
-            {display}
-          </div>
+          <div className="col-md-3"></div>
         </div>
-
-
+        <div className="row">
+            {display}
+        </div>
       </div>
+
     );
   }
 }
