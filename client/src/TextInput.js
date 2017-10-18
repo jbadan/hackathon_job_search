@@ -58,6 +58,14 @@ class TextInput extends Component {
           </div>
         </div>
         <div className="row">
+          <div className="col-md-3"></div>
+          <div className="col-md-6 beth">
+            <p> Beth Miller loves word clouds. </p>
+            <p>"shit Jenna I can't be funny/witty on command!" -Beth Miller</p>
+          </div>
+          <div className="col-md-3"></div>
+        </div>
+        <div className="row">
             <div className="col-md-3"></div>
             <div className="col-md-6">
             <form onSubmit={this.handleSubmit}>
