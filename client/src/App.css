@@ -4,6 +4,11 @@
 canvas {
   height: 300px;
 }
+.beth{
+  padding: 20px;
+  margin: 30px;
+  font-size: 1.5em;
+}
 .headers {
   font-family:'Play', sans-serif;
   font-weight: bold;
