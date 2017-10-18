@@ -70,9 +70,9 @@ class LogIn extends Component {
       <br/>
       <br/>
         <div className="row text-center">
-          <img className="col-sm-4 img-responsive img-circle" alt=" " src="img/home1.png"/>
-          <img className="col-sm-4 img-responsive img-circle" alt=" "  src="img/home2.png"/>
-          <img className="col-sm-4 img-responsive img-circle" alt=" "  src="img/home3.png"/>
+          <img className="col-sm-4 img-responsive img-circle" alt=" " src="img/home6.png"/>
+          <img className="col-sm-4 img-responsive img-circle" alt=" "  src="img/home4.png"/>
+          <img className="col-sm-4 img-responsive img-circle" alt=" "  src="img/home5.png"/>
         </div>
       </div>
 
