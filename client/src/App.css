@@ -1,68 +1,50 @@
 .App {
   text-align: center;
 }
-.App nav{
-}
-.App form{
-}
-canvas{
-  width: 40%;
-  height: 50%;
-}
+
 .headers {
   font-family:'Play', sans-serif;
   font-weight: bold;
   font-size: 30px;
 }
-.container {
-  position: relative;
-  width: 100%;
-  padding: ;
-  text-align: center;
+
+.padding{
+  padding: 20px;
+  margin-top: 5px;
 }
-#mainNav .navbar-default {
+.padding label{
+  padding: 10px;
+}
+.padding button{
+  background: none;
+  border: 1px solid grey;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+ .navbar-default {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;
   font-family: 'Play', sans-serif;
-  position: fixed;
-  text-align: center;
+  font-size: 1.2em;
 }
-#mainNav .navbar-brand {
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #F05F40;
-      font-family: 'Play', sans-serif;
+ .navbar-brand {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #F05F40;
+  font-family: 'Play', sans-serif;
 }
-#mainNav .navbar-brand:focus,
-#mainNav .navbar-brand:hover {
-      color: #f05f40;
+.navbar-brand:focus, .navbar-brand:hover {
+  color: #f05f40;
 }
 
-#center-image{
-  width: 60%;
-  height:100%;
-}
 p{
   font-size: 18px;
 }
-#info-div{
-  width: 40%;
-  height:100%;
-  float:left;
-}
-#generate{
-  width: 50%;
-  height: 100%;
-  float:right;
-}
-#text-box{
-  width:680px;
-  height: 150px;
-}
-#button{
+
+.button{
   color: white;
   background: royalblue;
   width: 100px;
-  height: 40px;
-  margin-left: 280px;
+  height: 30px;
+  margin-top: 5px;
 }

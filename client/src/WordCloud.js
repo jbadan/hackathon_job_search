@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { render } from "react-dom";
 import './App.css';
-import TextInput from './TextInput.js';
 import WordCloud from "wordcloud";
 
 
@@ -11,9 +9,6 @@ const styles = {
 };
 
 class WordCloudDisplay extends Component {
-  constructor(props){
-    super(props)
-  }
   handleChangeValue = e => this.setState({
     list: e.target.value
   })
@@ -30,7 +25,7 @@ class WordCloudDisplay extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="col-sm-6">
            <div style={styles}>
               <canvas ref="my-canvas" />
           </div>

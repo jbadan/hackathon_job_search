@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import TextInput from './TextInput.js';
-import WordCloud from './WordCloud.js';
 import NotFound from './NotFound.js';
 import LogIn from './LogIn.js'
 
@@ -9,8 +8,7 @@ import{
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
-  Redirect
+  Link
 }from 'react-router-dom';
 
 
